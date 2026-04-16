@@ -1,0 +1,193 @@
+/* ─── Design Tokens ─── */
+
+:root {
+  /* Colors */
+  --color-bg:       #FAFAF8;
+  --color-surface:  #FFFFFF;
+  --color-text:     #1A1A1A;
+  --color-text-mid: #555555;
+  --color-text-dim: #888888;
+  --color-accent:   #2A5CDB;
+  --color-border:   #E8E8E4;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-xs:   0.8125rem;  /* 13px */
+  --font-size-sm:   0.875rem;   /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-md:   1.125rem;   /* 18px */
+  --font-size-lg:   1.375rem;   /* 22px */
+  --font-size-xl:   1.75rem;    /* 28px */
+  --font-size-2xl:  2.25rem;    /* 36px */
+  --font-size-3xl:  3rem;       /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.15;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.04em;
+
+  /* Spacing */
+  --space-xs:  0.5rem;    /* 8px */
+  --space-sm:  0.75rem;   /* 12px */
+  --space-md:  1rem;      /* 16px */
+  --space-lg:  1.5rem;    /* 24px */
+  --space-xl:  2rem;      /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+  --space-4xl: 6rem;      /* 96px */
+
+  /* Layout */
+  --max-width: 640px;
+  --radius: 10px;
+}
+
+
+/* ─── Base ─── */
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+
+/* ─── Shared Layout ─── */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100dvh;
+  padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+}
+
+.page-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  flex: 1;
+}
+
+
+/* ─── Wordmark ─── */
+
+.wordmark {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+@media (min-width: 640px) {
+  .wordmark {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+
+/* ─── Tagline ─── */
+
+.tagline {
+  margin-top: var(--space-md);
+  font-size: var(--font-size-md);
+  color: var(--color-text-mid);
+  line-height: var(--line-height-relaxed);
+  max-width: 480px;
+}
+
+@media (min-width: 640px) {
+  .tagline {
+    font-size: var(--font-size-lg);
+  }
+}
+
+
+/* ─── Section ─── */
+
+.section {
+  margin-top: var(--space-3xl);
+}
+
+.section-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: var(--space-lg);
+}
+
+
+/* ─── Cards ─── */
+
+.card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--color-text-dim);
+}
+
+.card + .card {
+  margin-top: var(--space-md);
+}
+
+.card-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card-desc {
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-mid);
+  line-height: var(--line-height-relaxed);
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+}
+
+
+/* ─── Footer ─── */
+
+.footer {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-top: var(--space-4xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-dim);
+}
+
+.footer a {
+  color: var(--color-text-mid);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.footer a:hover {
+  text-decoration-color: var(--color-text-mid);
+}
